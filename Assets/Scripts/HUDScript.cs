@@ -11,7 +11,7 @@ public class HUDScript : MonoBehaviour
     //private int cooldown;
     public FirstPersonController playerController;
 
-    public GameObject transition, exitTransition;
+    public GameObject transition, exitTransition, escortTransition;
  
     private void Start() 
     {
@@ -30,12 +30,7 @@ public class HUDScript : MonoBehaviour
                 uiGoDown.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    transition.SetActive(true);
-                    playerController.playerCanMove = false;
-                    playerController.cameraCanMove = false;
-                    playerController.targetVelocity = new Vector3(0,0,0);
-                    playerController.velocity = new Vector3(0,0,0);
-                    playerController.isWalking = false;
+                    SceneTransitionStart(0);
                 }
             }
             else if (selection.tag == "UpperLevel")
@@ -43,12 +38,7 @@ public class HUDScript : MonoBehaviour
                 uiGoUp.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    exitTransition.SetActive(true);
-                    playerController.playerCanMove = false;
-                    playerController.cameraCanMove = false;
-                    playerController.targetVelocity = new Vector3(0,0,0);
-                    playerController.velocity = new Vector3(0,0,0);
-                    playerController.isWalking = false;
+                    SceneTransitionStart(1);
                 }
             }
 
@@ -70,6 +60,29 @@ public class HUDScript : MonoBehaviour
         //}
         //cooldown--;
         //Debug.Log(cooldown);
+    }
+
+    public void SceneTransitionStart(int transitionType)
+    {
+        switch (transitionType)
+        {
+            default: 
+                transition.SetActive(true);
+                break;
+            case 1:
+                exitTransition.SetActive(true);
+                break;
+            case 2:
+                escortTransition.SetActive(true);
+                break;
+
+
+        }
+        playerController.playerCanMove = false;
+        playerController.cameraCanMove = false;
+        playerController.targetVelocity = new Vector3(0,0,0);
+        playerController.velocity = new Vector3(0,0,0);
+        playerController.isWalking = false;
     }
 
     IEnumerator Paunch()

@@ -9,21 +9,19 @@ public class EnemyBehavior : MonoBehaviour
     private NavMeshAgent enemy;
     private Transform player, upperLevel;
     public GameObject deathVFX;
-    public bool selfDestructTest;
     public bool playerGrabbed = false;
     private FirstPersonController playerController;
+    public HUDScript playerHUD;
+    public PunchingScript punchingScript;
     private AudioSource comeBack;
-    public int hp = 5;
+    public int hp = 4;
     void Start()
     {
         enemy = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         upperLevel = GameObject.FindGameObjectWithTag("UpperLevel").transform;
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
-        if(selfDestructTest) Death(); //Death testing
         comeBack = GetComponent<AudioSource>();
-
-        //Invoke("Grab", 5f); //Grab testing
         
     }
     void Update()
@@ -38,7 +36,13 @@ public class EnemyBehavior : MonoBehaviour
         }
         else
         {
+            float distance = Vector3.Distance(transform.position, enemy.destination);
             enemy.SetDestination(upperLevel.position);
+            if (distance <= 3f)
+            {
+                punchingScript.cooldown = 9999f;
+                playerHUD.SceneTransitionStart(2);
+            }
         }
 
         if (hp <= 0)

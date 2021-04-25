@@ -5,19 +5,25 @@ using UnityEngine;
 public class PunchingScript : MonoBehaviour
 {
     private Animator animator;
-    private int cooldown;
+    public float cooldown;
+    private AudioSource swingSound;
     void Start()
     {
         animator = GetComponent<Animator>();
+        swingSound = GetComponent<AudioSource>();
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && cooldown <= 0)
+        if (Input.GetMouseButton(0) && cooldown <= 0)
         {
             animator.SetTrigger("Paunch");
-            cooldown = 80;
+            swingSound.pitch = Random.Range(0.8f, 1f);
+            swingSound.Play();
+            cooldown = 0.6f;
         }
-        cooldown--;
+        cooldown -= 1 * Time.deltaTime;
+        //Debug.Log(cooldown);
     }
+    
     
 }
