@@ -586,7 +586,7 @@ MonoBehaviour:
   walkSpeed: 4
   maxVelocityChange: 10
   isWalking: 0
-  enableSprint: 1
+  enableSprint: 0
   unlimitedSprint: 1
   sprintKey: 304
   sprintSpeed: 7
