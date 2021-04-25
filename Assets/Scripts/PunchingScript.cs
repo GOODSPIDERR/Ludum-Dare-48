@@ -19,7 +19,7 @@ public class PunchingScript : MonoBehaviour
             animator.SetTrigger("Paunch");
             swingSound.pitch = Random.Range(0.8f, 1f);
             swingSound.Play();
-            cooldown = 0.6f;
+            cooldown = 0.8f;
         }
         cooldown -= 1 * Time.deltaTime;
         //Debug.Log(cooldown);

@@ -13,15 +13,17 @@ public class EnemyBehavior : MonoBehaviour
     private FirstPersonController playerController;
     public HUDScript playerHUD;
     public PunchingScript punchingScript;
-    private AudioSource comeBack;
+    public AudioSource comeBack, hitSound;
     public int hp = 4;
+    public Renderer enemyRenderer;
+
+    public Material defaultMaterial, hitMaterial;
     void Start()
     {
         enemy = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         upperLevel = GameObject.FindGameObjectWithTag("UpperLevel").transform;
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
-        comeBack = GetComponent<AudioSource>();
         
     }
     void Update()
@@ -29,8 +31,8 @@ public class EnemyBehavior : MonoBehaviour
         if (!playerGrabbed)
         {
             float distance = Vector3.Distance(player.position, transform.position);
-            if (distance < 20f && distance > 4.4f) enemy.SetDestination(player.position);
-            else if (distance <= 4.4f) Grab();
+            if (distance < 20f && distance > 4.2f) enemy.SetDestination(player.position);
+            else if (distance <= 4.2f) Grab();
             else enemy.SetDestination(transform.position);
             //Debug.Log(distance);
         }
@@ -84,7 +86,17 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (other.tag == "MainCamera")
         {
-            hp--;
+            StartCoroutine("GotHit");
         }
+    }
+
+    IEnumerator GotHit()
+    {
+        hitSound.pitch = Random.Range(0.8f, 1f);
+        hitSound.Play();
+        hp--;
+        enemyRenderer.material = hitMaterial;
+        yield return new WaitForSeconds(0.5f);
+        enemyRenderer.material = defaultMaterial;
     }
 }
