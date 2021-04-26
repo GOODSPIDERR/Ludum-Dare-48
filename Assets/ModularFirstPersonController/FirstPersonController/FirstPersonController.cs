@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 #if UNITY_EDITOR
     using UnityEditor;
@@ -163,6 +164,9 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+
+        if (transform.position.y < -20f) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         #region Camera
 
         // Control camera movement

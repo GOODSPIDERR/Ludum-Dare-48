@@ -7,6 +7,7 @@ public class MainMenuManager : MonoBehaviour
 {
 
     public GameObject transition;
+    public Animator cameraAnimator;
     private void Start() 
     {
         Cursor.visible = true;
@@ -15,6 +16,12 @@ public class MainMenuManager : MonoBehaviour
     public void StartGame()
     {
         //SceneManager.LoadScene("MainGameplay");
+        cameraAnimator.SetTrigger("GameStarted");
         transition.SetActive(true);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

@@ -29,6 +29,7 @@ public class EnemyBehavior : MonoBehaviour
         playerController = player.GetComponent<FirstPersonController>();
         playerHUD = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<HUDScript>();
         punchingScript = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PunchingScript>();
+        enemyRenderer.material = defaultMaterial;
 
     }
     void Update()

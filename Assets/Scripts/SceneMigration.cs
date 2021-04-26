@@ -13,9 +13,13 @@ public class SceneMigration : MonoBehaviour
     void Start()
     {
 
-        cameraa = GameObject.FindGameObjectWithTag("MainCamera");
-        punchingScript = cameraa.GetComponent<PunchingScript>();
-        punchingScript.cooldown = 9999f;
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            cameraa = GameObject.FindGameObjectWithTag("MainCamera");
+            punchingScript = cameraa.GetComponent<PunchingScript>();
+            punchingScript.cooldown = 9999f;
+        }
+        
         allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
         foreach(AudioSource audioS in allAudioSources) 
         {
