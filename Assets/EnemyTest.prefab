@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 7025224254453515549}
   m_Layer: 0
   m_Name: EnemyTest
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +172,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -198,12 +198,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 6479886656785344579, guid: da4733ea7e13eea439a4651f1e3c4a9b, type: 3}
   playerGrabbed: 0
-  playerHUD: {fileID: 0}
-  punchingScript: {fileID: 0}
   comeBack: {fileID: 7025224254453515550}
   hitSound: {fileID: 7025224254453515549}
   hp: 5
   enemyRenderer: {fileID: 7025224254070543682}
+  chaseDistance: 30
   defaultMaterial: {fileID: 2100000, guid: d7a5cb47fdd65ba4f873fc998cf19851, type: 2}
   hitMaterial: {fileID: 2100000, guid: 161ecd7e07e44434da2b90a5aaf43249, type: 2}
 --- !u!136 &7025224254453515548

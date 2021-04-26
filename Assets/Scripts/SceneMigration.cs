@@ -8,8 +8,14 @@ public class SceneMigration : MonoBehaviour
     private AudioSource[] allAudioSources;
     private AudioSource swound;
     public bool loadMainMenu;
+    private GameObject cameraa;
+    private PunchingScript punchingScript;
     void Start()
     {
+
+        cameraa = GameObject.FindGameObjectWithTag("MainCamera");
+        punchingScript = cameraa.GetComponent<PunchingScript>();
+        punchingScript.cooldown = 9999f;
         allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
         foreach(AudioSource audioS in allAudioSources) 
         {
