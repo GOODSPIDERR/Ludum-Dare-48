@@ -9,11 +9,11 @@ public class EnemyBehavior : MonoBehaviour
     private NavMeshAgent enemy;
     private GameObject player, upperLevel;
     public GameObject deathVFX;
-    public bool playerGrabbed = false;
+    public bool playerGrabbed = false, lastScene = false;
     private FirstPersonController playerController;
     private HUDScript playerHUD;
     private PunchingScript punchingScript;
-    public AudioSource comeBack, hitSound;
+    public AudioSource comeBack, hitSound, staticNoise;
     public int hp = 4;
     public Renderer enemyRenderer;
     public float chaseDistance = 30f;
@@ -71,6 +71,11 @@ public class EnemyBehavior : MonoBehaviour
 
     void Death()
     {
+        if (lastScene) 
+        {
+            Time.timeScale = 0.25f;
+            staticNoise.Stop();
+        }
         playerGrabbed = false;
         player.transform.parent = null;
         playerController.playerCanMove = true;

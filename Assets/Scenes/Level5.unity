@@ -325,6 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 111501084}
   - component: {fileID: 111501085}
+  - component: {fileID: 111501086}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -494,6 +495,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &111501086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111501083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdc269c6af82075448a12851e620a75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &136776479
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,6 +946,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7025224254453515547, guid: 83d5c1ddd465c4449894994596743308, type: 3}
+      propertyPath: hp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025224254453515547, guid: 83d5c1ddd465c4449894994596743308, type: 3}
+      propertyPath: lastScene
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025224254453515547, guid: 83d5c1ddd465c4449894994596743308, type: 3}
+      propertyPath: staticNoise
+      value: 
+      objectReference: {fileID: 111501085}
     - target: {fileID: 7025224254453515547, guid: 83d5c1ddd465c4449894994596743308, type: 3}
       propertyPath: chaseDistance
       value: 60
