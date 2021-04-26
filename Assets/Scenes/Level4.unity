@@ -21719,6 +21719,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstPersonController
       objectReference: {fileID: 0}
+    - target: {fileID: 3761632223268608009, guid: 5f58ec716d6330d4bb52aa2f7311d3c1, type: 3}
+      propertyPath: m_text
+      value: no stopping now
+      objectReference: {fileID: 0}
     - target: {fileID: 3761632223967393648, guid: 5f58ec716d6330d4bb52aa2f7311d3c1, type: 3}
       propertyPath: sharedProfile
       value: 

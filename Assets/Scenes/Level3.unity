@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: fbbb36f5b9198194294cdd6b27cad8be, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 4ac58adac358ff245995a170f74682ea, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 477cc4148fad3449482a3bc3178594e2, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -1775,7 +1775,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: da2a6b75f5fd951429b6bd6e8ecafc0d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -20668,6 +20668,10 @@ PrefabInstance:
     - target: {fileID: 707240927174616760, guid: 5f58ec716d6330d4bb52aa2f7311d3c1, type: 3}
       propertyPath: m_Name
       value: FirstPersonController
+      objectReference: {fileID: 0}
+    - target: {fileID: 3761632223268608009, guid: 5f58ec716d6330d4bb52aa2f7311d3c1, type: 3}
+      propertyPath: m_text
+      value: what does sunlight look like again?
       objectReference: {fileID: 0}
     - target: {fileID: 3761632223967393648, guid: 5f58ec716d6330d4bb52aa2f7311d3c1, type: 3}
       propertyPath: sharedProfile

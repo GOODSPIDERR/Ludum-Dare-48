@@ -22,7 +22,6 @@ public class PunchingScript : MonoBehaviour
             cooldown = 0.8f;
         }
         cooldown -= 1 * Time.deltaTime;
-        //Debug.Log(cooldown);
     }
     
     

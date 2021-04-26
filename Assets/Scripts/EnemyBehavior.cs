@@ -19,6 +19,7 @@ public class EnemyBehavior : MonoBehaviour
     public float chaseDistance = 30f;
     private int selfID;
     public Material defaultMaterial, hitMaterial;
+    private bool canGetHit = true;
 
     void Start()
     {
@@ -41,7 +42,6 @@ public class EnemyBehavior : MonoBehaviour
             if (distance < chaseDistance && distance > 4.2f && player.transform.parent == null) enemy.SetDestination(player.transform.position); //If within distance, start chasing
             else if (distance <= 4.2f && player.transform.parent == null) Grab(); //If grab range, grab
             else enemy.SetDestination(transform.position); //If out of distance, stand still
-            //Debug.Log(distance);
         }
         //Return management
         else if (playerGrabbed)
@@ -64,12 +64,9 @@ public class EnemyBehavior : MonoBehaviour
     void Grab()
     {
         playerGrabbed = true;
-        //enemy.SetDestination(upperLevel.position);
         player.transform.parent = gameObject.transform;
-        //playerController.targetVelocity = new Vector3(0,0,0);
         playerController.playerCanMove = false;
         comeBack.Play();
-        //Invoke("Death", 5f);
     }
 
     void Death()
@@ -83,7 +80,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.tag == "MainCamera")
+        if (other.tag == "MainCamera" && canGetHit)
         {
             StartCoroutine("GotHit");
         }
@@ -91,11 +88,13 @@ public class EnemyBehavior : MonoBehaviour
 
     IEnumerator GotHit()
     {
+        canGetHit = false;
         hitSound.pitch = Random.Range(0.8f, 1f);
         hitSound.Play();
         hp--;
         enemyRenderer.material = hitMaterial;
         yield return new WaitForSeconds(0.5f);
+        canGetHit = true;
         enemyRenderer.material = defaultMaterial;
     }
 }

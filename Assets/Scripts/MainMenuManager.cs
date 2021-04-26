@@ -15,7 +15,6 @@ public class MainMenuManager : MonoBehaviour
     }
     public void StartGame()
     {
-        //SceneManager.LoadScene("MainGameplay");
         cameraAnimator.SetTrigger("GameStarted");
         transition.SetActive(true);
     }

@@ -53,13 +53,6 @@ public class HUDScript : MonoBehaviour
             uiGoDown.SetActive(false);
             uiGoUp.SetActive(false);
         }
-        //if (Input.GetMouseButtonDown(0) && cooldown <= 0)
-        //{
-        //    StartCoroutine("Paunch");
-        //    cooldown = 60;
-        //}
-        //cooldown--;
-        //Debug.Log(cooldown);
     }
 
     public void SceneTransitionStart(int transitionType)
