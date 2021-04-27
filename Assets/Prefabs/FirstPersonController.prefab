@@ -583,7 +583,7 @@ MonoBehaviour:
   zoomFOV: 30
   zoomStepTime: 5
   playerCanMove: 1
-  walkSpeed: 4.5
+  walkSpeed: 5
   maxVelocityChange: 10
   isWalking: 0
   enableSprint: 0

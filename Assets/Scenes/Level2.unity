@@ -972,7 +972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7025224254453515546, guid: 83d5c1ddd465c4449894994596743308, type: 3}
       propertyPath: m_Speed
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7025224254453515547, guid: 83d5c1ddd465c4449894994596743308, type: 3}
       propertyPath: playerHUD
@@ -6569,7 +6569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7025224254453515545, guid: 83d5c1ddd465c4449894994596743308, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22
+      value: -32
       objectReference: {fileID: 0}
     - target: {fileID: 7025224254453515545, guid: 83d5c1ddd465c4449894994596743308, type: 3}
       propertyPath: m_LocalPosition.y
