@@ -32,7 +32,5 @@ public class LastSceneTimescaleManager : MonoBehaviour
             if (audioS != null)
             audioS.pitch = Time.timeScale;
         }
-
-        Debug.Log(Time.timeScale);
     }
 }

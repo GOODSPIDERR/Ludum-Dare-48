@@ -20,6 +20,7 @@ public class EnemyBehavior : MonoBehaviour
     private int selfID;
     public Material defaultMaterial, hitMaterial;
     private bool canGetHit = true;
+    public AudioSource heartBeat;
 
     void Start()
     {
@@ -74,6 +75,7 @@ public class EnemyBehavior : MonoBehaviour
         if (lastScene) 
         {
             Time.timeScale = 0.25f;
+            heartBeat.Play();
             staticNoise.Stop();
         }
         playerGrabbed = false;
