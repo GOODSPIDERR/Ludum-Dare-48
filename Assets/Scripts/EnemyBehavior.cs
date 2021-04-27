@@ -19,7 +19,7 @@ public class EnemyBehavior : MonoBehaviour
     public float chaseDistance = 30f;
     private int selfID;
     public Material defaultMaterial, hitMaterial;
-    private bool canGetHit = true;
+    private bool canGetHit = true, gameCanEnd = false;
     public AudioSource heartBeat;
 
     void Start()
@@ -49,7 +49,7 @@ public class EnemyBehavior : MonoBehaviour
         {
             float distance = Vector3.Distance(transform.position, enemy.destination); //Finding the distance
             enemy.SetDestination(upperLevel.transform.position);
-            if (distance <= 3f)
+            if (distance <= 3f && gameCanEnd)
             {
                 playerHUD.SceneTransitionStart(2);
             }
@@ -68,6 +68,12 @@ public class EnemyBehavior : MonoBehaviour
         player.transform.parent = gameObject.transform;
         playerController.playerCanMove = false;
         comeBack.Play();
+        Invoke("CanGetGrabbedCheck", 2f);
+    }
+
+    void CanGetGrabbedCheck()
+    {
+        gameCanEnd = true;
     }
 
     void Death()
