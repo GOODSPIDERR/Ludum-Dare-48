@@ -7968,6 +7968,10 @@ PrefabInstance:
       propertyPath: enableSprint
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 707240927174616755, guid: 5f58ec716d6330d4bb52aa2f7311d3c1, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 707240927174616756, guid: 5f58ec716d6330d4bb52aa2f7311d3c1, type: 3}
       propertyPath: m_RootOrder
       value: 0

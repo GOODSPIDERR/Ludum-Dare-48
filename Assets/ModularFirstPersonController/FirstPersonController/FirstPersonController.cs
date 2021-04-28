@@ -128,6 +128,8 @@ public class FirstPersonController : MonoBehaviour
     public float bobSpeed = 10f;
     public Vector3 bobAmount = new Vector3(.15f, .05f, 0f);
 
+    
+
     // Internal Variables
     private Vector3 jointOriginalPos;
     private float timer = 0;
@@ -164,8 +166,6 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
-
         if (transform.position.y < -20f) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         #region Camera
 
